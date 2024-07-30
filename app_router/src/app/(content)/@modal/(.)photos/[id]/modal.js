@@ -19,7 +19,7 @@ export function Modal({ children }) {
     }
 
     return createPortal(
-        <div className="modal-backdrop">
+        <div className="modal-backdrop" onClick={onDismiss}>
             <dialog ref={dialogRef} className="modal" onClose={onDismiss}>
                 {children}
                 <button onClick={onDismiss} className="close-button" />
