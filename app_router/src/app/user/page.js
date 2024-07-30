@@ -9,7 +9,7 @@ export default function UserPage() {
                     <Link href={'/user/some/more/1'}>User 1</Link>
                 </li>
                 <li>
-                    <Link href={'/user/some/more/2'}>User 2</Link>
+                    <Link href={'/user/some/more/error/provoce/condition/2'}>User 2</Link>
                 </li>
                 <li>
                     <Link href={'/user/some/more/3'}>User 3</Link>
