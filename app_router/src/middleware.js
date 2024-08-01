@@ -4,8 +4,6 @@ export function middleware(request) {
     const { pathname } = request.nextUrl;
     const isAuthed = request.cookies.get('authToken');
 
-    console.log(request.url, pathname, request.cookies);
-
     // if (!isAuthed && !pathname.startsWith('/home')) {
     //     return NextResponse.redirect(new URL('/home', request.url))
     // }

@@ -30,6 +30,9 @@ export default function RootLayout({ children, modal }) {
                         <li>
                             <Link href={'/archive'}>Archive</Link>
                         </li>
+                        <li>
+                            <Link href={'/news'}>News</Link>
+                        </li>
                     </ul>
                 </nav>
                 <main>{children}</main>
