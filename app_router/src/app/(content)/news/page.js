@@ -1,4 +1,5 @@
-import { Suspense } from 'react';
+import AddNewButton from '@/components/AddNewButton/AddNewButton';
+// import { Suspense } from 'react';
 
 export default async function NewsPage() {
     const newsRes = await fetch('http://localhost:8080/news');
@@ -9,11 +10,11 @@ export default async function NewsPage() {
     }
 
     const news = await newsRes.json();
-    const articles = await articleRes.json();
+    // const articles = await articleRes.json();
 
     return (
         <div>
-            <Suspense fallback={<p>Loading articles...</p>}>
+            {/* <Suspense fallback={<p>Loading articles...</p>}>
                 <ul>
                     {!!articles.length &&
                         articles.map(({ title, date }) => (
@@ -23,7 +24,7 @@ export default async function NewsPage() {
                             </li>
                         ))}
                 </ul>
-            </Suspense>
+            </Suspense> */}
             <ul>
                 {!!news.length &&
                     news.map(({ title, date }) => (
@@ -33,6 +34,7 @@ export default async function NewsPage() {
                         </li>
                     ))}
             </ul>
+            <AddNewButton>Add new news</AddNewButton>
         </div>
     );
 }

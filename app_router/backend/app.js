@@ -70,13 +70,18 @@ const app = express();
 app.use(cors());
 
 app.get('/news', async (req, res) => {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
     const news = db.prepare('SELECT * FROM news').all();
     res.json(news);
 });
 
+app.post('/add/news', async (req, res) => {
+    const insert = db.prepare('INSERT INTO news (slug, title, content, date, image) VALUES (?, ?, ?, ?, ?)');
+    const newNews = insert.run(`some-slug${Date.now()}`, 'Some title', 'Some random content to fill this field', new Date().toISOString(), 'no');
+    
+    res.json({ success: true });
+});
+
 app.get('/articles', async (req, res) => {
-    await new Promise((resolve) => setTimeout(resolve, 2000));
     const news = db.prepare('SELECT * FROM news').all();
     res.json(news);
 });

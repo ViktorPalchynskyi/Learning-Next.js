@@ -1,5 +1,5 @@
 // import UserForm from '@/components/Form/UserForm';
-import RedirectButton from '@/components/Button/RedirectButton';
+import RedirectButton from '@/components/RedirectButton/RedirectButton';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 
