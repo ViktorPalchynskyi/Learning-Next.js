@@ -19,8 +19,14 @@ export function addMessage(message) {
 }
 
 export const getMessages = unstable_cache(
-    cache(function getMessages() {
-        console.log('Fetching messages from db');
-        return db.prepare('SELECT * FROM messages').all();
-    })
+    cache(
+        function getMessages() {
+            console.log('Fetching messages from db');
+            return db.prepare('SELECT * FROM messages').all();
+        },
+        ['message'],
+        {
+            tags: ['msg'],
+        }
+    )
 );

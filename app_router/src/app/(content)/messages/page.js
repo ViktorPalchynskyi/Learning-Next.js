@@ -5,6 +5,11 @@ import { getMessages } from '../../../../lib/messages';
 // export const revalidate = 5;
 // export const dynamic = 'force-dynamic';
 
+export const metadata = {
+    title: 'Important messages',
+    description: 'Browse our lates messages',
+};
+
 export default async function MessagesPage() {
     // unstable_noStore();
     // const response = await fetch('http://localhost:8080/messages', {
