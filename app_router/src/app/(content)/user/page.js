@@ -1,3 +1,4 @@
+import UserForm from '@/components/Form/UserForm';
 import Link from 'next/link';
 
 export default function UserPage() {
@@ -15,6 +16,7 @@ export default function UserPage() {
                     <Link href={'/user/some/more/3'}>User 3</Link>
                 </li>
             </ul>
+            <UserForm />
         </div>
     );
 }
