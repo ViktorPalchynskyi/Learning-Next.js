@@ -7,14 +7,17 @@ export default function App({ Component, pageProps }) {
             <header>
                 <nav>
                     <ul>
-                        <Link href='/blog'>
+                        <Link href="/">
+                            <li>Home</li>
+                        </Link>
+                        <Link href="/blog">
                             <li>Blog</li>
                         </Link>
-                        <Link href='/user'>
+                        <Link href="/user">
                             <li>User</li>
                         </Link>
-                        <Link href='/'>
-                            <li>Home</li>
+                        <Link href="/products">
+                            <li>Products</li>
                         </Link>
                     </ul>
                 </nav>
