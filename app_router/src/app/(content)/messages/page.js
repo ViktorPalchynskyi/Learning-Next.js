@@ -2,10 +2,10 @@ import Messages from '@/components/Messages/Messages';
 import { unstable_noStore } from 'next/cache';
 
 // export const revalidate = 5;
-export const dynamic = 'force-static';
+export const dynamic = 'force-dynamic';
 
 export default async function MessagesPage() {
-    unstable_noStore();
+    // unstable_noStore();
     const response = await fetch('http://localhost:8080/messages');
     const messages = await response.json();
     if (!messages || messages.length === 0) {
