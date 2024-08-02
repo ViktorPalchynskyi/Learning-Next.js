@@ -19,6 +19,9 @@ export default function App({ Component, pageProps }) {
                         <Link href="/products">
                             <li>Products</li>
                         </Link>
+                        <Link href="/profile">
+                            <li>Profile</li>
+                        </Link>
                     </ul>
                 </nav>
             </header>
