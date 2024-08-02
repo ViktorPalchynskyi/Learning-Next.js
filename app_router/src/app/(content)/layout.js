@@ -36,6 +36,9 @@ export default function RootLayout({ children, modal }) {
                         <li>
                             <Link href={'/messages'}>Messages</Link>
                         </li>
+                        <li>
+                            <Link href={'/messages/new'}>New Message</Link>
+                        </li>
                     </ul>
                 </nav>
                 <main>{children}</main>
