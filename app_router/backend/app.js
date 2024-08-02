@@ -75,6 +75,12 @@ app.get('/news', async (req, res) => {
     res.json(news);
 });
 
+app.get('/articles', async (req, res) => {
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    const news = db.prepare('SELECT * FROM news').all();
+    res.json(news);
+});
+
 initDb();
 
 app.listen(8080, () => {
