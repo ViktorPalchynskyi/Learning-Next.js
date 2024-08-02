@@ -18,7 +18,7 @@ export function addMessage(message) {
     db.prepare('INSERT INTO messages (text) VALUES (?)').run(message);
 }
 
-export function getMessages() {
+export const getMessages = cache(function getMessages() {
     console.log('Fetching messages from db');
     return db.prepare('SELECT * FROM messages').all();
-}
+});
