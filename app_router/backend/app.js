@@ -77,13 +77,22 @@ app.get('/news', async (req, res) => {
 app.post('/add/news', async (req, res) => {
     const insert = db.prepare('INSERT INTO news (slug, title, content, date, image) VALUES (?, ?, ?, ?, ?)');
     const newNews = insert.run(`some-slug${Date.now()}`, 'Some title', 'Some random content to fill this field', new Date().toISOString(), 'no');
-    
+
     res.json({ success: true });
 });
 
 app.get('/articles', async (req, res) => {
     const news = db.prepare('SELECT * FROM news').all();
     res.json(news);
+});
+
+app.get('/messages', (req, res) => {
+    const requestSource = req.headers['x-id'];
+    console.log(`${new Date().toISOString()}: EXECUTING /messages on backend from ${requestSource}`);
+    res.json([
+        { id: 1, text: 'Hello World' },
+        { id: 2, text: 'Another message from the separate backend' },
+    ]);
 });
 
 initDb();
