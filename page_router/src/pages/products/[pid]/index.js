@@ -1,5 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
+import Head from 'next/head';
 
 const getProducts = async () => {
     const filePath = path.join(process.cwd(), '/data/dummy-backend.json');
@@ -35,13 +36,23 @@ export async function getStaticProps(context) {
 
 export default function ProductDetailPage({ product }) {
     if (!product) {
-        return <p>Loading...</p>
+        return <p>Loading...</p>;
     }
+
+    const { title, description } = product;
 
     return (
         <>
-            <h1>{product.title}</h1>
-            <p>{product.description}</p>
+            <Head>
+                <title>{title}</title>
+                <meta name="description" content={description} />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+            <main>
+                <h1>{title}</h1>
+                <p>{description}</p>
+            </main>
         </>
     );
 }
